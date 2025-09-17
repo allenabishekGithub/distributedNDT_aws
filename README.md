@@ -1,6 +1,6 @@
-# NDT Manager - Network Distribution Topology Manager
+# NDT Manager
 
-Automated containerlab topology deployment and management across AWS EC2 instances.
+Objective: Automated containerlab topology deployment and management of a Network Topology across multiple AWS EC2 instances.
 
 ## Overview
 NDT Manager automatically provisions, configures, and manages EC2 instances to run distributed containerlab topologies. It intelligently distributes network topologies across multiple instances based on resource requirements and connects them seamlessly.
