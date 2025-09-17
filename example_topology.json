@@ -1,0 +1,80 @@
+{
+  "name": "spine-leaf-demo",
+  "mgmt": {
+    "network": "mgmt",
+    "ipv4-subnet": "172.20.20.0/24"
+  },
+  "topology": {
+    "nodes": {
+      "spine1": {
+        "kind": "srl",
+        "image": "ghcr.io/nokia/srlinux:latest",
+        "mgmt-ipv4": "172.20.20.11"
+      },
+      "spine2": {
+        "kind": "srl", 
+        "image": "ghcr.io/nokia/srlinux:latest",
+        "mgmt-ipv4": "172.20.20.12"
+      },
+      "leaf1": {
+        "kind": "srl",
+        "image": "ghcr.io/nokia/srlinux:latest", 
+        "mgmt-ipv4": "172.20.20.21"
+      },
+      "leaf2": {
+        "kind": "srl",
+        "image": "ghcr.io/nokia/srlinux:latest",
+        "mgmt-ipv4": "172.20.20.22"
+      },
+      "leaf3": {
+        "kind": "srl",
+        "image": "ghcr.io/nokia/srlinux:latest",
+        "mgmt-ipv4": "172.20.20.23"
+      },
+      "server1": {
+        "kind": "linux",
+        "image": "alpine:latest",
+        "mgmt-ipv4": "172.20.20.31"
+      },
+      "server2": {
+        "kind": "linux", 
+        "image": "alpine:latest",
+        "mgmt-ipv4": "172.20.20.32"
+      },
+      "server3": {
+        "kind": "linux",
+        "image": "alpine:latest", 
+        "mgmt-ipv4": "172.20.20.33"
+      }
+    },
+    "links": [
+      {
+        "endpoints": ["spine1:e1-1", "leaf1:e1-49"]
+      },
+      {
+        "endpoints": ["spine1:e1-2", "leaf2:e1-49"] 
+      },
+      {
+        "endpoints": ["spine1:e1-3", "leaf3:e1-49"]
+      },
+      {
+        "endpoints": ["spine2:e1-1", "leaf1:e1-50"]
+      },
+      {
+        "endpoints": ["spine2:e1-2", "leaf2:e1-50"]
+      },
+      {
+        "endpoints": ["spine2:e1-3", "leaf3:e1-50"]
+      },
+      {
+        "endpoints": ["leaf1:e1-1", "server1:eth1"]
+      },
+      {
+        "endpoints": ["leaf2:e1-1", "server2:eth1"]
+      },
+      {
+        "endpoints": ["leaf3:e1-1", "server3:eth1"]
+      }
+    ]
+  }
+}

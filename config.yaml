@@ -1,0 +1,98 @@
+# NDT Manager Configuration
+
+# AWS Configuration
+aws:
+  region: "eu-central-1"
+  key_pair_name: "allenrootkeypair"  # Your EC2 key pair name
+  iam_role_name: "ec2-admin-root"
+
+# SSH Configuration
+ssh:
+  key_path: "~/.ssh/id_rsa"  # Path to your private SSH key
+  username: "ubuntu"
+  timeout: 30
+
+# Server Configuration
+server:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+
+# EC2 Instance Types and Specifications
+instance_types:
+  small:
+    instance_type: "t3.medium"
+    cpu: 2
+    memory: 4
+    storage: 20
+    max_nodes: 3
+  medium:
+    instance_type: "t3.large"
+    cpu: 2
+    memory: 8
+    storage: 50
+    max_nodes: 5
+  large:
+    instance_type: "t3.xlarge"
+    cpu: 4
+    memory: 16
+    storage: 100
+    max_nodes: 10
+  xlarge:
+    instance_type: "t3.2xlarge"
+    cpu: 8
+    memory: 32
+    storage: 200
+    max_nodes: 20
+
+# Resource thresholds for determining when to create new instances
+resource_thresholds:
+  cpu_threshold: 0.8  # 80% CPU utilization
+  memory_threshold: 0.8  # 80% memory utilization
+  storage_threshold: 0.9  # 90% storage utilization
+
+# Containerlab node resource estimates
+node_resources:
+  default:
+    cpu: 0.2
+    memory: 0.5
+    storage: 1.0
+  srl:
+    cpu: 1.0
+    memory: 2.0
+    storage: 5.0
+  srlinux:
+    cpu: 1.0
+    memory: 2.0
+    storage: 5.0
+  ceos:
+    cpu: 0.5
+    memory: 1.0
+    storage: 3.0
+  arista_ceos:
+    cpu: 0.5
+    memory: 1.0
+    storage: 3.0
+  linux:
+    cpu: 0.2
+    memory: 0.5
+    storage: 1.0
+  alpine:
+    cpu: 0.1
+    memory: 0.2
+    storage: 0.5
+
+# Deployment settings
+deployment:
+  max_nodes_per_instance: 10
+  deployment_timeout: 300  # seconds, taking larger topologies into account
+  health_check_interval: 60  # seconds
+  max_concurrent_deployments: 5 # the ndt manager runs on a t3.xlarge ec2 instance which can handle 5 concurrent deployments of large topologies
+  worker_instance_default: "medium"  # Default instance for worker nodes
+
+manager:
+  instance_type: "t3.xlarge"
+  cpu_cores: 4
+  memory_gb: 16
+  max_concurrent_operations: 10
+  api_workers: 2

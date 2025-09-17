@@ -1,0 +1,104 @@
+ubuntu@ip-172-31-20-84:~/distributedNDT_aws$ ./start.sh
+Starting NDT Manager...
+Checking prerequisites...
+Starting NDT Manager API server...
+Instance:  in 
+Public URL: http://:8000
+Documentation: http://:8000/docs
+
+WARNING:  Current configuration will not reload as not all conditions are met, please refer to documentation.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started parent process [10778]
+/home/ubuntu/distributedNDT_aws/venv/lib/python3.12/site-packages/paramiko/pkey.py:100: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/home/ubuntu/distributedNDT_aws/venv/lib/python3.12/site-packages/paramiko/pkey.py:100: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/home/ubuntu/distributedNDT_aws/venv/lib/python3.12/site-packages/paramiko/transport.py:258: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+/home/ubuntu/distributedNDT_aws/venv/lib/python3.12/site-packages/paramiko/transport.py:258: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+2025-09-16 11:06:32,639 - botocore.credentials - INFO - Found credentials from IAM Role: ec2-admin-root
+2025-09-16 11:06:32,699 - botocore.credentials - INFO - Found credentials from IAM Role: ec2-admin-root
+INFO:     Started server process [10823]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [10822]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:37776 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37776 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54776 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47422 - "GET /resources HTTP/1.1" 200 OK
+2025-09-16 11:07:20,002 - ndt_manager - ERROR - No Ubuntu 24.04 AMIs found
+2025-09-16 11:07:20,003 - ndt_manager - WARNING - Using fallback AMI ami-02003f9f0fde924ea for region eu-central-1
+2025-09-16 11:07:21,210 - ndt_manager - INFO - Created EC2 instance i-0177eacdecb23ec1c
+2025-09-16 11:07:46,672 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:07:46,825 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:07:58,622 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:07:58,684 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:08:08,839 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:08:08,942 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:08:19,507 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:08:19,592 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:08:59,798 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:08:59,869 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:09:10,733 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:09:10,885 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:09:21,083 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:09:21,141 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:09:31,279 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:09:31,380 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:09:41,530 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:09:41,590 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:09:51,745 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:09:51,809 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:10:01,944 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:10:02,029 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:10:02,773 - ndt_manager - INFO - Instance i-0177eacdecb23ec1c is ready
+2025-09-16 11:10:02,965 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:10:03,080 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:10:03,774 - ndt_manager - ERROR - No Ubuntu 24.04 AMIs found
+2025-09-16 11:10:03,775 - ndt_manager - WARNING - Using fallback AMI ami-02003f9f0fde924ea for region eu-central-1
+2025-09-16 11:10:05,041 - ndt_manager - INFO - Created EC2 instance i-0581d00f5e91de82a
+2025-09-16 11:10:33,601 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:10:33,752 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:10:46,224 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:10:46,291 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:10:56,488 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:10:56,555 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:11:06,970 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:11:07,044 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:11:17,261 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:11:17,332 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:12:17,825 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:12:18,211 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:12:29,241 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:12:29,317 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:12:39,616 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:12:39,701 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:12:49,898 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:12:49,967 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:12:54,722 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:12:54,792 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:12:55,442 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:12:55,505 - paramiko.transport - INFO - Authentication (publickey) successful!
+INFO:     127.0.0.1:54236 - "GET /resources HTTP/1.1" 200 OK
+2025-09-16 11:13:00,233 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:13:00,325 - paramiko.transport - INFO - Authentication (publickey) successful!
+INFO:     127.0.0.1:34014 - "GET /health HTTP/1.1" 200 OK
+2025-09-16 11:13:10,578 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:13:10,642 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:13:20,983 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:13:21,207 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:13:22,097 - ndt_manager - INFO - Instance i-0581d00f5e91de82a is ready
+2025-09-16 11:13:22,190 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:13:22,273 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:13:22,571 - paramiko.transport.sftp - INFO - [chan 0] Opened sftp connection (server version 3)
+2025-09-16 11:13:22,576 - paramiko.transport.sftp - INFO - [chan 0] sftp session closed.
+2025-09-16 11:13:22,711 - ndt_manager - INFO - Successfully deployed topology to i-0177eacdecb23ec1c
+2025-09-16 11:13:22,844 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2025-09-16 11:13:22,907 - paramiko.transport - INFO - Authentication (publickey) successful!
+2025-09-16 11:13:23,035 - paramiko.transport.sftp - INFO - [chan 0] Opened sftp connection (server version 3)
+2025-09-16 11:13:23,040 - paramiko.transport.sftp - INFO - [chan 0] sftp session closed.
+2025-09-16 11:13:23,169 - ndt_manager - INFO - Successfully deployed topology to i-0581d00f5e91de82a
+INFO:     127.0.0.1:42794 - "POST /deploy-topology HTTP/1.1" 200 OK
