@@ -79,7 +79,7 @@ class NDTManager:
     def __init__(self):
         self.ec2_client = boto3.client("ec2")
         self.ec2_resource = boto3.resource("ec2")
-        self.ssh_key_path = os.getenv("SSH_KEY_PATH", "~/.ssh/id_rsa")
+        self.ssh_key_path = os.path.expanduser(os.getenv("SSH_KEY_PATH", "~/.ssh/id_rsa"))
         self.managed_instances: Dict[str, Dict] = {}
         self.topology_deployments: Dict[str, Dict] = {}
 
@@ -719,8 +719,9 @@ async def deploy_topology(topology: NetworkTopology, background_tasks: Backgroun
         if len(distribution) > 1 and successful_deployments >= 2:
             connector = NetworkConnector()
             connectivity["attempted"] = True
+            key_path = os.path.expanduser(ndt_manager.ssh_key_path)
             ok = await connector.setup_inter_instance_connectivity(
-                distribution, ndt_manager.ec2_client, ndt_manager.ssh_key_path
+                distribution, ndt_manager.ec2_client, key_path
             )
             connectivity["ok"] = bool(ok)
 
